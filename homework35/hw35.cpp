@@ -18,12 +18,20 @@ double multiply(double a, double b)
 
 double divide(double a, double b)
 {
-  return a / b;
+    return a / b;
+}
+
+void sum_arrays(const int* A, const int* B, int* C, int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        C[i] = A[i] + B[i];
+    }
 }
 
 int main()
 {
-	cout << "task 1" << endl;
+    cout << "task 1" << endl;
 
     double (*operations[])(double, double) = { add, subtract, multiply, divide };
     char symbols[] = { '+', '-', '*', '/' };
@@ -90,10 +98,7 @@ int main()
         cin >> B[i];
     }
 
-    for (int i = 0; i < size; i++)
-    {
-        C[i] = A[i] + B[i];
-    }
+    sum_arrays(A, B, C, size);
 
     cout << "\nThird array: ";
     for (int i = 0; i < size; i++)
@@ -109,4 +114,3 @@ int main()
     cout << endl;
     return 0;
 }
-
